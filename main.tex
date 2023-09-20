@@ -1,0 +1,72 @@
+%------------------------ Preamble and bibliography resources
+\documentclass[12pt,oneside]{book}
+\input{frontmatter/preamble} 
+\usepackage{style/title}[PhD,cosupervisor]
+\usepackage{style/hacks}
+\usepackage{aas_macros}
+\usepackage{hyperref}
+%\makenomenclature
+
+% Add your bibtex file here
+%\addbibresource{library.bib}
+
+%------------------------ Main Document --------------------------
+\begin{document}
+	%-------------- Information For The Title Page
+	\title{YOUR TITLE HERE}
+	\author{your name}
+	\date{\today} 
+	\degreetitle{Doctor of Philosophy (PhD)} 
+
+
+    
+	\supervisor[1]{supervisor}
+	\cosupervisor[2]{co-supervisor}% For multiple supervisors
+	\school{Physics}
+	
+	%-------------- Front Matter
+	\frontmatter
+	\maketitle
+	\declaration
+	
+	\include{frontmatter/abstract}
+	\include{frontmatter/AoC}
+	\include{frontmatter/acknowledgments}
+	
+	%-------------- Table of contents
+	\cleardoublepage
+	\phantomsection \pdfbookmark[0]{Contents}{Contents} 
+	\tableofcontents
+	
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\listoffigures
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listtablename}
+	\listoftables
+	%\include{frontmatter/nomenclature}
+	%\printnomenclature
+	\include{frontmatter/summary_of_works}
+	%-------------- Chapters
+	\cleardoublepage
+	\mainmatter
+ 	\include{chapters/1_introduction}
+ 	\include{chapters/2_redshift_difference}
+    \include{chapters/3_cosmology_models}
+    \include{chapters/4_expansion_history}
+    \include{chapters/5_conclusion}
+ 	%-------------- Appendices
+	\cleardoublepage
+	\appendix
+	\include{appendices/appendix1}
+	
+	%-------------- Bibliography
+	\cleardoublepage
+	\phantomsection  
+	%\addcontentsline{toc}{chapter}{Bibliography}              
+	%\printbibliography
+	\bibliography{bibliography}
+\end{document}  
+
